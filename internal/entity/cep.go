@@ -2,7 +2,6 @@ package entity
 
 import (
 	"context"
-	"log"
 	"net/http"
 	"time"
 
@@ -26,20 +25,16 @@ func BuscaCep(cep string, w http.ResponseWriter, r *http.Request) {
 
 	select {
 	case <-ctx.Done():
-		log.Println("Context cancelled")
+		println("Context cancelled")
 		cancel()
-		return
 	case <-time.After(1 * time.Second):
-		log.Println("Timeout reached, no response received")
+		println("Timeout reached, no response received")
 		cancel()
-		return
 	case apiResponse := <-brasilChannel:
 		println("Response from Brasil API: ", apiResponse)
 		cancel()
-		return
 	case apiResponse := <-viaCepChannel:
 		println("Response from ViaCEP API: ", apiResponse)
 		cancel()
-		return
 	}
 }

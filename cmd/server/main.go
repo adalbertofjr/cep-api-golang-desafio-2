@@ -16,7 +16,7 @@ func main() {
 
 func startServer() {
 	fmt.Println("Servidor iniciado na porta", porta)
-	fmt.Println("Acesse http://localhost:8080/?cep=04446160 para buscar o CEP")
+	fmt.Println("Acesse http://localhost:8080/?cep=01153000 para buscar o CEP")
 	fmt.Println("Pressione Ctrl+C para parar o servidor")
 
 	http.HandleFunc("/", handlers.GetCEP)

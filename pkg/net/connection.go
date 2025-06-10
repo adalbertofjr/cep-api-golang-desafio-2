@@ -1,4 +1,4 @@
-package entity
+package net
 
 import (
 	"context"
