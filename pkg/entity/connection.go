@@ -34,9 +34,5 @@ func FetchData(url string, w http.ResponseWriter, r *http.Request) string {
 		return "Internal Server Error"
 	}
 
-	w.Header().Set("Content-Type", "application/json") // Define o tipo de conteúdo como JSON
-	w.WriteHeader(http.StatusOK)                       // Retorna o status 200 OK
-	// json.NewEncoder(w).Encode(body)
-	// fmt.Fprint(w, string(body))
 	return string(body)
 }

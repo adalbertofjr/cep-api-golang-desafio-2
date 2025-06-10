@@ -9,7 +9,6 @@ import (
 
 func GetCepBrasilApi(cep string, w http.ResponseWriter, r *http.Request) string {
 	url := fmt.Sprintf("https://brasilapi.com.br/api/cep/v1/%s", cep)
-
 	return entity.FetchData(url, w, r)
 }
 
